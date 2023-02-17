@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <unistd.h>
 /**
- * main-prints a string and standard error 
+ * main-prints a string.
  * comments in C source code.
  * Please use it consistently.
  * Return: 1
