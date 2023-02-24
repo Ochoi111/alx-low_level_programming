@@ -1,6 +1,7 @@
 #include "main.h"
 /**
  * print_most_numbers - Function that prints number for a digit (0 through 9).
+ *
  * Return: Always 0.
  */
 void print_most_numbers(void)
@@ -18,4 +19,4 @@ void print_most_numbers(void)
 		}
 	}
 	_putchar('\n');
-
+}
