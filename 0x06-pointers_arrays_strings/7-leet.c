@@ -1,26 +1,26 @@
 #include "main.h"
+
 /**
- * leet - encode into 1337speak
- * @n: input value
- * Return: n value
+ * puts_half - prints half of a string.
+ * @str: input string.
+ * Return: no return.
  */
-char *leet(char *n)
+void puts_half(char *str)
 {
-	int i, j;
+	int count = 0, i;
 
-	char s1[] = "aAeEoOtTlL";
-	char s2[] = "4433007711";
-
-	for (i = 0; n[i] != '\0'; i++)
+	while (count >= 0)
 	{
-		for (j = 0; j < 10; j++)
-		{
-			if (n[i] == s1[j])
-			{
-				n[i] = s2[j];
-			}
-		}
+		if (str[count] == '\0')
+			break;
+		count++;
 	}
-	return (n)
-}
+	if (count % 2 == 1)
 
+		i = count / 2;
+	else
+		i = (count - 1) / 2;
+	for (i++; i < count; i++)
+		_putchar(str[i]);
+	_putchar('\n');
+}
