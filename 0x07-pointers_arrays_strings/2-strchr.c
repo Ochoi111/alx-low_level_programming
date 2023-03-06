@@ -20,3 +20,4 @@ return (&s[i]);
 else
 return (NULL);
 }
+
