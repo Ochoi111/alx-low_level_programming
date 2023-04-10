@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 char *create_buffer(char *file);
-void close_file(int fd);
+void close_file(int Fd);
 
 /**
  * create_buffer - read 1024 bytes for a buffer.
@@ -68,7 +68,7 @@ int main(int argc, char *argv[])
 
 	buffer = create_buffer(argv[2]);
 	file_from = open(argv[1], O_RDONLY);
-	readfile = read(from, buffer, 1024);
+	readfile = read(file_from, buffer, 1024);
 	file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 
 	do {
@@ -80,8 +80,8 @@ int main(int argc, char *argv[])
 			exit(98);
 		}
 
-		writefile = write(file_to, buffer, r);
-		if (end == -1 || writefile == -1)
+		writefile = write(file_to, buffer, readfile);
+		if (file_to == -1 || writefile == -1)
 		{
 			dprintf(STDERR_FILENO,
 				"Error: Can't write to %s\n", argv[2]);
@@ -90,7 +90,7 @@ int main(int argc, char *argv[])
 		}
 
 		readfile = read(file_from, buffer, 1024);
-		end = open(argv[2], O_WRONLY | O_APPEND);
+		file_to = open(argv[2], O_WRONLY | O_APPEND);
 
 	} while (readfile > 0);
 
