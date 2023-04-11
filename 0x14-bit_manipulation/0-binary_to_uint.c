@@ -17,3 +17,12 @@ unsigned int binary_to_uint(const char *b)
 		return (0);
     }
 
+	while ((b[length] == '0') || (b[length] == '1'))
+	{
+		number <<= 1;
+		number += b[length] - '0';
+		length++;
+	}
+
+	return (number);
+}
